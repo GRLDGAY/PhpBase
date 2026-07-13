@@ -14,7 +14,7 @@
         8080
     ],
 
-    "postCreateCommand": "php -v && php -m | grep -E 'pdo_mysql|sodium'",
+    "postCreateCommand": "setfacl -R -m u:www-data:rwx /workspace/projetPhp && setfacl -R -d -m u:www-data:rwx /workspace/projetPhp && php -v && php -m | grep -E 'pdo_mysql|sodium'",
 
     "customizations": {
         "vscode": {
