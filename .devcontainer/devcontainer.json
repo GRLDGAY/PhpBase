@@ -1,1 +1,32 @@
+{
+    "name": "PhpBase",
 
+    "dockerComposeFile": [
+        "../docker-compose.yml"
+    ],
+
+    "service": "app",
+
+    "workspaceFolder": "/workspace/projetPhp",
+
+    "forwardPorts": [
+        8000,
+        8080
+    ],
+
+    "postCreateCommand": "php -v && php -m | grep -E 'pdo_mysql|sodium'",
+
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "bmewburn.vscode-intelephense-client",
+                "xdebug.php-debug"
+            ],
+
+            "settings": {
+                "php.validate.executablePath": "/usr/local/bin/php",
+                "editor.formatOnSave": true
+            }
+        }
+    }
+}
